@@ -333,10 +333,16 @@
 <script>
   const SUPABASE_URL  = 'https://kykcphnknhdgsrmjizny.supabase.co';
   const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt5a2NwaG5rbmhkZ3NybWppem55Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE0NzA2MDksImV4cCI6MjA5NzA0NjYwOX0.3zi-WoN-wAKYFX1ykzBhAkkaU_ptuDR2BaInw4p7hz4';
-  const SITE_URL = 'https://site-redes-phi.vercel.app/';
+  const SITE_URL = 'https://sitesite-ten.vercel.app';
   const { createClient } = supabase;
   const sb = createClient(SUPABASE_URL, SUPABASE_ANON);
- 
+  const { data, error } = await supabase.auth.signInWithOAuth({
+  provider: 'google',
+  options: {
+    // Deve ser a URL do seu site na Vercel + a rota que lida com o login
+    redirectTo: 'https://sitesite-ten.vercel.app/auth/callback', 
+  },
+})
   // Jogos padrão (fixos)
   const DEFAULT_GAMES = [
     {id:'hk',  title:'Hollow Knight',            sub:'Team Cherry · Metroidvania',  icon:'🐛', banner:'#818cf8', custom:false},
