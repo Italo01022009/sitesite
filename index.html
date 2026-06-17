@@ -12,7 +12,7 @@
     :root {
       --bg:#0a0a0f; --surface:#12121a; --border:rgba(255,255,255,0.08);
       --accent:#fca5a5; --accent2:#818cf8; --text:#f1f5f9; --muted:#64748b;
-      --card-glow:rgba(252,165,165,.06);
+      --card-glow:rgba(252,165,165,0.06);
     }
     html,body { min-height:100%; background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; }
     .bg-grid { position:fixed; inset:0; z-index:0; pointer-events:none; background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px); background-size:48px 48px; mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black 20%,transparent 100%); }
@@ -22,7 +22,7 @@
     @keyframes drift { from{transform:translate(0,0) scale(1);} to{transform:translate(40px,30px) scale(1.08);} }
     @keyframes rise  { from{opacity:0;transform:translateY(32px);} to{opacity:1;transform:translateY(0);} }
     @keyframes spin  { to{transform:rotate(360deg);} }
- 
+
     /* LOGIN */
     #login-page { position:relative; z-index:1; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:1.5rem; }
     .login-card { background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:2.5rem; width:100%; max-width:430px; box-shadow:0 0 60px var(--card-glow),0 24px 48px rgba(0,0,0,.5); animation:rise .6s cubic-bezier(.22,1,.36,1) both; }
@@ -68,7 +68,7 @@
     .resend-row button:disabled { opacity:.4; pointer-events:none; }
     .footer { margin-top:1.5rem; text-align:center; font-size:.72rem; color:var(--muted); }
     .footer a { color:var(--accent); text-decoration:none; }
- 
+
     /* DASHBOARD */
     #dashboard-page { display:none; position:relative; z-index:1; min-height:100vh; padding:2rem 1.5rem; }
     .dash-header { display:flex; align-items:center; gap:1rem; margin-bottom:2rem; flex-wrap:wrap; }
@@ -83,13 +83,13 @@
     .summary-card { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:.9rem 1.25rem; flex:1; min-width:120px; }
     .summary-card .s-label { font-size:.75rem; color:var(--muted); margin-bottom:.25rem; }
     .summary-card .s-value { font-size:1.4rem; font-weight:700; }
- 
+
     /* barra de ações acima da grid */
     .grid-actions { display:flex; align-items:center; justify-content:space-between; margin-bottom:1.25rem; flex-wrap:wrap; gap:.75rem; }
     .grid-actions h2 { font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; color:var(--muted); }
     .btn-add-game { display:flex; align-items:center; gap:.5rem; padding:.55rem 1rem; background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#0a0a0f; font-weight:700; font-size:.82rem; font-family:'DM Sans',sans-serif; border:none; border-radius:10px; cursor:pointer; transition:transform .15s,opacity .15s; }
     .btn-add-game:hover { transform:translateY(-2px); opacity:.9; }
- 
+
     .games-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.25rem; }
     .game-card { background:var(--surface); border:1px solid var(--border); border-radius:16px; overflow:hidden; transition:transform .2s,box-shadow .2s; }
     .game-card:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(0,0,0,.4); }
@@ -119,7 +119,7 @@
     .btn-edit { width:100%; padding:7px; border:1px solid var(--border); border-radius:10px; background:transparent; color:var(--muted); font-size:.82rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px; transition:background .15s,border-color .15s,color .15s; }
     .btn-edit:hover { background:rgba(255,255,255,.05); border-color:var(--accent); color:var(--accent); }
     .loading-overlay { text-align:center; color:var(--muted); padding:3rem; font-size:.9rem; }
- 
+
     /* MODAL */
     .modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:100; align-items:center; justify-content:center; }
     .modal-overlay.open { display:flex; }
@@ -136,19 +136,19 @@
     .modal-btns button { flex:1; padding:9px; border-radius:10px; font-size:.88rem; cursor:pointer; font-family:'DM Sans',sans-serif; font-weight:600; }
     .btn-cancel { background:transparent; border:1px solid var(--border); color:var(--muted); }
     .btn-save { background:linear-gradient(135deg,var(--accent),var(--accent2)); border:none; color:#0a0a0f; }
- 
+
     /* emoji picker */
     .emoji-grid { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
     .emoji-opt { font-size:1.4rem; cursor:pointer; padding:4px; border-radius:8px; border:2px solid transparent; transition:border-color .15s,background .15s; }
     .emoji-opt:hover { background:rgba(255,255,255,.07); }
     .emoji-opt.selected { border-color:var(--accent); background:rgba(252,165,165,.1); }
- 
+
     /* color picker */
     .color-grid { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
     .color-opt { width:28px; height:28px; border-radius:50%; cursor:pointer; border:2px solid transparent; transition:border-color .15s,transform .15s; }
     .color-opt:hover { transform:scale(1.15); }
     .color-opt.selected { border-color:#fff; }
- 
+
     /* confirm delete */
     #confirm-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:110; align-items:center; justify-content:center; }
     #confirm-overlay.open { display:flex; }
@@ -159,7 +159,7 @@
     .confirm-btns button { flex:1; padding:9px; border-radius:10px; font-size:.88rem; cursor:pointer; font-family:'DM Sans',sans-serif; font-weight:600; }
     .btn-confirm-del { background:#ef4444; border:none; color:#fff; }
     .btn-confirm-del:hover { background:#dc2626; }
- 
+
     /* TOAST */
     #toast { position:fixed; bottom:2rem; left:50%; transform:translateX(-50%) translateY(20px); padding:.6rem 1.25rem; border-radius:8px; font-size:.85rem; opacity:0; pointer-events:none; transition:opacity .3s,transform .3s; z-index:999; background:#ef4444; color:#fff; }
     #toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
@@ -170,12 +170,13 @@
 <div class="bg-grid"></div>
 <div class="bg-blob blob-1"></div>
 <div class="bg-blob blob-2"></div>
- 
+
+<!-- LOGIN -->
 <div id="login-page">
   <div class="login-card">
     <div class="logo-wrap"><div class="logo-icon">🌐</div></div>
     <h1 class="card-title">site <span>site</span></h1>
- 
+
     <div id="screen-login" class="screen active">
       <p class="card-sub">Entre pra ver seus recordes</p>
       <button class="btn-google" id="btn-google" onclick="loginGoogle()">
@@ -199,7 +200,7 @@
       </div>
       <p class="footer">Ao entrar você concorda com os <a href="#">Termos</a> e <a href="#">Privacidade</a></p>
     </div>
- 
+
     <div id="screen-pin" class="screen">
       <p class="pin-hint">Enviamos um PIN de 8 dígitos para<br/><strong id="pin-email-label"></strong></p>
       <div class="pin-inputs" id="pin-inputs">
@@ -216,7 +217,7 @@
       <div class="resend-row">Não recebeu? <button id="btn-resend" onclick="resendPin()" disabled>Reenviar em <span id="countdown">60</span>s</button></div>
       <div class="link-row"><a onclick="goScreen('screen-login')">← Voltar</a></div>
     </div>
- 
+
     <div id="screen-cadastro" class="screen">
       <p class="card-sub">Crie sua conta</p>
       <div class="field"><label>Nome</label><div class="input-wrap"><input type="text" id="cad-nome" placeholder="Seu nome"/></div></div>
@@ -226,7 +227,7 @@
       <button class="btn-primary" onclick="cadastrar()">Criar conta</button>
       <div class="link-row"><a onclick="goScreen('screen-login')">← Já tenho conta</a></div>
     </div>
- 
+
     <div id="screen-reset" class="screen">
       <p class="card-sub">Redefinir senha</p>
       <p style="font-size:.82rem;color:var(--muted);margin-bottom:1.25rem;text-align:center">Digite seu e-mail e enviaremos um link para redefinir a senha.</p>
@@ -234,7 +235,7 @@
       <button class="btn-primary" id="btn-reset" onclick="enviarReset()">Enviar link</button>
       <div class="link-row"><a onclick="goScreen('screen-login')">← Voltar</a></div>
     </div>
- 
+
     <div id="screen-nova-senha" class="screen">
       <p class="card-sub">Criar nova senha</p>
       <div class="field"><label>Nova senha</label><div class="input-wrap"><input type="password" id="nova-senha" placeholder="Mínimo 6 caracteres"/><button class="toggle-pw" onclick="togglePw('nova-senha','eye-nova')" type="button" tabindex="-1"><i class="ti ti-eye" id="eye-nova"></i></button></div></div>
@@ -243,7 +244,8 @@
     </div>
   </div>
 </div>
- 
+
+<!-- DASHBOARD -->
 <div id="dashboard-page">
   <div class="dash-header">
     <span style="font-size:2rem">🏆</span>
@@ -293,7 +295,8 @@
     </div>
   </div>
 </div>
- 
+
+<!-- MODAL: CRIAR / EDITAR JOGO -->
 <div class="modal-overlay" id="game-modal-overlay">
   <div class="modal">
     <h3 id="game-modal-title">Adicionar jogo</h3>
@@ -311,7 +314,8 @@
     </div>
   </div>
 </div>
- 
+
+<!-- CONFIRM DELETE -->
 <div id="confirm-overlay">
   <div class="confirm-box">
     <h3>Deletar jogo?</h3>
@@ -322,13 +326,13 @@
     </div>
   </div>
 </div>
- 
+
 <div id="toast"></div>
- 
+
 <script>
   const SUPABASE_URL  = 'https://kykcphnknhdgsrmjizny.supabase.co';
   const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt5a2NwaG5rbmhkZ3NybWppem55Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE0NzA2MDksImV4cCI6MjA5NzA0NjYwOX0.3zi-WoN-wAKYFX1ykzBhAkkaU_ptuDR2BaInw4p7hz4';
-  const SITE_URL = 'https://sitesite-ten.vercel.app';
+  const SITE_URL = 'https://site-redes-phi.vercel.app/';
   const { createClient } = supabase;
   const sb = createClient(SUPABASE_URL, SUPABASE_ANON);
 
@@ -341,41 +345,38 @@
     {id:'dsh', title:'Dead Cells',               sub:'Motion Twin · Roguelite',     icon:'⚔️', banner:'#fbbf24', custom:false},
     {id:'cup', title:'Cuphead',                  sub:'Studio MDHR · Run & Gun',     icon:'☕', banner:'#fb923c', custom:false},
   ];
- 
+
   const EMOJIS = ['🎮','🕹️','👾','🐛','🕷️','🍓','🌿','⚔️','☕','🔥','💀','🌙','🐉','🦊','🐺','🌊','⚡','🏹','🗡️','🛡️','🎯','🚀','🌟','💎'];
   const COLORS = ['#818cf8','#6ee7b7','#f87171','#34d399','#fbbf24','#fb923c','#f472b6','#38bdf8','#a78bfa','#4ade80','#facc15','#fb7185'];
- 
+
   let GAMES = [...DEFAULT_GAMES];
   let scores = {};
   let editingId = null, pickedStars = 0, lastEmail = '', cdTimer = null, currentUser = null;
   let editingGameId = null, deletingGameId = null;
   let pickedEmoji = '🎮', pickedColor = '#818cf8';
- 
+
   // ── Auth ──────────────────────────────────────
   (async () => {
     const { data:{ session } } = await sb.auth.getSession();
     if (session) await enterDashboard(session.user);
   })();
- 
+
   sb.auth.onAuthStateChange(async (event, session) => {
     if (event === 'PASSWORD_RECOVERY') { showLoginPage(); goScreen('screen-nova-senha'); return; }
     if (session) await enterDashboard(session.user);
     else         showLoginPage();
   });
- 
+
   async function loginGoogle() {
     const btn = document.getElementById('btn-google');
     btn.classList.add('loading');
     const { error } = await sb.auth.signInWithOAuth({
       provider:'google',
-      options:{ 
-        redirectTo: SITE_URL + '/auth/callback',
-        queryParams:{ access_type:'offline', prompt:'consent' } 
-      }
+      options:{ redirectTo: SITE_URL, queryParams:{ access_type:'offline', prompt:'consent' } }
     });
     if (error) { btn.classList.remove('loading'); showToast('Erro: '+error.message); }
   }
- 
+
   async function loginSenha() {
     const email = document.getElementById('login-email').value.trim();
     const senha = document.getElementById('login-senha').value;
@@ -383,7 +384,7 @@
     const { error } = await sb.auth.signInWithPassword({ email, password:senha });
     if (error) showToast('Erro: '+error.message);
   }
- 
+
   async function cadastrar() {
     const nome=document.getElementById('cad-nome').value.trim();
     const email=document.getElementById('cad-email').value.trim();
@@ -396,7 +397,7 @@
     if (error) showToast('Erro: '+error.message);
     else { goScreen('screen-login'); showToast('Conta criada! Verifique seu e-mail.', true); }
   }
- 
+
   async function enviarReset() {
     const email = document.getElementById('reset-email').value.trim();
     if (!email) { showToast('Digite seu e-mail'); return; }
@@ -407,7 +408,7 @@
     if (error) showToast('Erro: '+error.message);
     else showToast('Link enviado! Verifique seu e-mail.', true);
   }
- 
+
   async function salvarNovaSenha() {
     const senha=document.getElementById('nova-senha').value;
     const confirma=document.getElementById('nova-confirma').value;
@@ -417,7 +418,7 @@
     if (error) showToast('Erro: '+error.message);
     else showToast('Senha atualizada!', true);
   }
- 
+
   async function sendPin() {
     const email = document.getElementById('pin-email-input').value.trim();
     if (!email||!email.includes('@')) { showToast('Digite um e-mail válido'); return; }
@@ -428,7 +429,271 @@
     if (error) { showToast('Erro: '+error.message); return; }
     lastEmail=email;
     document.getElementById('pin-email-label').textContent=email;
-    goScreen('screen-pin');
+    goScreen('screen-pin'); focusFirst(); startCd();
+    showToast('PIN enviado! Verifique seu e-mail', true);
+  }
+
+  async function verifyPin() {
+    const digits=[...document.querySelectorAll('#pin-inputs input')].map(i=>i.value).join('');
+    if (digits.length<8) { showToast('Digite os 8 dígitos'); return; }
+    const btn=document.getElementById('btn-verify');
+    btn.disabled=true; btn.textContent='Verificando…';
+    const { error } = await sb.auth.verifyOtp({ email:lastEmail, token:digits, type:'email' });
+    btn.disabled=false; btn.textContent='Verificar PIN';
+    if (error) { showToast('PIN inválido. Tente novamente.'); clearPins(); focusFirst(); }
+  }
+
+  async function resendPin() {
+    await sb.auth.signInWithOtp({ email:lastEmail, options:{ shouldCreateUser:true } });
+    clearPins(); focusFirst(); startCd();
+    showToast('Novo PIN enviado!', true);
+  }
+
+  async function logout() { await sb.auth.signOut(); }
+
+  // ── Carregar jogos customizados do banco ──────
+  async function loadCustomGames(userId) {
+    const { data, error } = await sb.from('custom_games').select('*').eq('user_id', userId).order('created_at');
+    if (error) { console.error(error); return; }
+    GAMES = [...DEFAULT_GAMES];
+    if (data) data.forEach(row => {
+      GAMES.push({ id: row.id, title: row.title, sub: row.sub, icon: row.icon, banner: row.banner, custom: true });
+    });
+  }
+
+  // ── Carregar scores ───────────────────────────
+  async function loadScores(userId) {
+    const { data, error } = await sb.from('highscores').select('*').eq('user_id', userId);
+    if (error) { console.error(error); return; }
+    scores = {};
+    GAMES.forEach(g => scores[g.id] = {score:0, level:'—', stars:0, status:'jogando'});
+    if (data) data.forEach(row => { scores[row.game_id] = { score:row.score, level:row.level, stars:row.stars, status:row.status }; });
+  }
+
+  async function saveScore(userId, gameId, data) {
+    const { error } = await sb.from('highscores').upsert({ user_id:userId, game_id:gameId, score:data.score, level:data.level, stars:data.stars, status:data.status }, { onConflict:'user_id,game_id' });
+    if (error) { showToast('Erro ao salvar: '+error.message); return false; }
+    return true;
+  }
+
+  // ── CRUD jogos ────────────────────────────────
+  function openGameModal(gameId = null) {
+    editingGameId = gameId;
+    buildEmojiGrid(); buildColorGrid();
+    if (gameId) {
+      const g = GAMES.find(x => x.id === gameId);
+      document.getElementById('game-modal-title').textContent = 'Editar jogo';
+      document.getElementById('gm-title').value = g.title;
+      document.getElementById('gm-sub').value   = g.sub;
+      pickedEmoji = g.icon; pickedColor = g.banner;
+    } else {
+      document.getElementById('game-modal-title').textContent = 'Adicionar jogo';
+      document.getElementById('gm-title').value = '';
+      document.getElementById('gm-sub').value   = '';
+      pickedEmoji = '🎮'; pickedColor = '#818cf8';
+    }
+    updateEmojiGrid(); updateColorGrid();
+    document.getElementById('game-modal-overlay').classList.add('open');
+  }
+
+  function closeGameModal() { document.getElementById('game-modal-overlay').classList.remove('open'); editingGameId=null; }
+
+  async function saveGame() {
+    const title = document.getElementById('gm-title').value.trim();
+    const sub   = document.getElementById('gm-sub').value.trim();
+    if (!title) { showToast('Digite o nome do jogo'); return; }
+    const btn = document.getElementById('btn-save-game');
+    btn.disabled=true; btn.textContent='Salvando…';
+
+    if (editingGameId) {
+      // UPDATE
+      const { error } = await sb.from('custom_games').update({ title, sub, icon:pickedEmoji, banner:pickedColor }).eq('id', editingGameId).eq('user_id', currentUser.id);
+      btn.disabled=false; btn.textContent='Salvar';
+      if (error) { showToast('Erro: '+error.message); return; }
+      const g = GAMES.find(x => x.id === editingGameId);
+      g.title=title; g.sub=sub; g.icon=pickedEmoji; g.banner=pickedColor;
+      showToast('Jogo atualizado!', true);
+    } else {
+      // INSERT
+      const { data, error } = await sb.from('custom_games').insert({ user_id:currentUser.id, title, sub, icon:pickedEmoji, banner:pickedColor }).select().single();
+      btn.disabled=false; btn.textContent='Salvar';
+      if (error) { showToast('Erro: '+error.message); return; }
+      GAMES.push({ id:data.id, title, sub, icon:pickedEmoji, banner:pickedColor, custom:true });
+      scores[data.id] = {score:0, level:'—', stars:0, status:'jogando'};
+      showToast('Jogo adicionado!', true);
+    }
+    closeGameModal(); renderDashboard();
+  }
+
+  function openConfirm(gameId) {
+    deletingGameId = gameId;
+    const g = GAMES.find(x => x.id === gameId);
+    document.getElementById('confirm-msg').textContent = `Isso vai apagar "${g.title}" e todos os recordes. Não tem como desfazer.`;
+    document.getElementById('confirm-overlay').classList.add('open');
+  }
+  function closeConfirm() { document.getElementById('confirm-overlay').classList.remove('open'); deletingGameId=null; }
+
+  async function confirmDelete() {
+    if (!deletingGameId) return;
+    const g = GAMES.find(x => x.id === deletingGameId);
+    // deleta highscores desse jogo
+    await sb.from('highscores').delete().eq('user_id', currentUser.id).eq('game_id', deletingGameId);
+    // se for jogo custom, deleta do banco também
+    if (g && g.custom) {
+      const { error } = await sb.from('custom_games').delete().eq('id', deletingGameId).eq('user_id', currentUser.id);
+      if (error) { showToast('Erro: '+error.message); closeConfirm(); return; }
+    }
+    GAMES = GAMES.filter(x => x.id !== deletingGameId);
+    delete scores[deletingGameId];
+    closeConfirm(); renderDashboard();
+    showToast('Jogo deletado!', true);
+  }
+
+  // ── Emoji / Color pickers ─────────────────────
+  function buildEmojiGrid() {
+    const grid = document.getElementById('emoji-grid');
+    grid.innerHTML = EMOJIS.map(e => `<span class="emoji-opt" onclick="pickEmoji('${e}')">${e}</span>`).join('');
+  }
+  function buildColorGrid() {
+    const grid = document.getElementById('color-grid');
+    grid.innerHTML = COLORS.map(c => `<div class="color-opt" style="background:${c}" onclick="pickColor('${c}')"></div>`).join('');
+  }
+  function pickEmoji(e)  { pickedEmoji=e; updateEmojiGrid(); }
+  function pickColor(c)  { pickedColor=c; updateColorGrid(); }
+  function updateEmojiGrid() { document.querySelectorAll('.emoji-opt').forEach(el=>el.classList.toggle('selected', el.textContent===pickedEmoji)); }
+  function updateColorGrid() { document.querySelectorAll('.color-opt').forEach(el=>el.classList.toggle('selected', el.style.background===pickedColor||el.style.backgroundColor===pickedColor)); }
+
+  // ── Páginas ───────────────────────────────────
+  function goScreen(id) { document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active')); document.getElementById(id).classList.add('active'); }
+
+  function switchTab(tab) {
+    document.getElementById('tab-senha').classList.toggle('active', tab==='senha');
+    document.getElementById('tab-pin').classList.toggle('active', tab==='pin');
+    document.getElementById('form-senha').style.display = tab==='senha'?'block':'none';
+    document.getElementById('form-pin').style.display   = tab==='pin'?'block':'none';
+  }
+
+  function showLoginPage() {
+    document.getElementById('login-page').style.display     = 'flex';
+    document.getElementById('dashboard-page').style.display = 'none';
+    goScreen('screen-login');
+    document.getElementById('btn-google').classList.remove('loading');
+    document.body.style.overflow='hidden';
+  }
+
+  async function enterDashboard(user) {
+    currentUser = user;
+    document.getElementById('login-page').style.display     = 'none';
+    document.getElementById('dashboard-page').style.display = 'block';
+    document.body.style.overflow='auto';
+    const meta = user.user_metadata||{};
+    document.getElementById('u-name').textContent = meta.full_name||meta.name||user.email?.split('@')[0]||'Usuário';
+    document.getElementById('u-avatar').src = meta.avatar_url||meta.picture||'';
+    document.getElementById('games-grid').innerHTML = '<div class="loading-overlay">Carregando recordes...</div>';
+    await loadCustomGames(user.id);
+    await loadScores(user.id);
+    renderDashboard();
+  }
+
+  // ── Dashboard ─────────────────────────────────
+  function renderDashboard() {
+    const grid=document.getElementById('games-grid');
+    grid.innerHTML='';
+    let totalStars=0,countStars=0,zerados=0,topScore=0;
+    GAMES.forEach(g=>{
+      const d=scores[g.id]||{score:0,level:'—',stars:0,status:'jogando'};
+      if(d.stars>0){totalStars+=d.stars;countStars++;}
+      if(d.status==='zerado') zerados++;
+      if(d.score>topScore) topScore=d.score;
+      let sh=''; for(let i=1;i<=5;i++) sh+=`<span class="${i<=d.stars?'star-on':'star-off'}">★</span>`;
+      const customBtns = `
+        <button class="btn-icon edit-game" onclick="openGameModal('${g.id}')" title="Editar jogo"><i class="ti ti-pencil"></i></button>
+        <button class="btn-icon delete" onclick="openConfirm('${g.id}')" title="Deletar jogo"><i class="ti ti-trash"></i></button>`;
+      grid.innerHTML+=`
+        <div class="game-card">
+          <div class="game-banner" style="background:${g.banner}"></div>
+          <div class="game-body">
+            <div class="game-top">
+              <div class="game-top-left">
+                <div class="game-icon" style="background:${g.banner}22">${g.icon}</div>
+                <span class="game-status status-${d.status}">${d.status}</span>
+              </div>
+              <div class="game-actions">${customBtns}</div>
+            </div>
+            <div class="game-title">${g.title}</div>
+            <div class="game-sub">${g.sub}</div>
+            <div class="game-stats">
+              <div class="gs"><div class="gs-label">Pontuação</div><div class="gs-value">${d.score.toLocaleString('pt-BR')}</div></div>
+              <div class="gs"><div class="gs-label">Fase</div><div class="gs-value" style="font-size:.78rem">${d.level}</div></div>
+            </div>
+            <div class="stars-row">${sh}</div>
+            <button class="btn-edit" onclick="openModal('${g.id}')"><i class="ti ti-edit"></i> Editar recorde</button>
+          </div>
+        </div>`;
+    });
+    document.getElementById('s-total').textContent   = GAMES.length;
+    document.getElementById('s-zerados').textContent  = zerados;
+    document.getElementById('s-avg').textContent      = countStars?(totalStars/countStars).toFixed(1)+'★':'—';
+    document.getElementById('s-top').textContent      = topScore?topScore.toLocaleString('pt-BR'):'—';
+  }
+
+  // ── Modal recorde ─────────────────────────────
+  function openModal(id) {
+    editingId=id;
+    const g=GAMES.find(x=>x.id===id), d=scores[id]||{score:0,level:'—',stars:0,status:'jogando'};
+    document.getElementById('modal-title').textContent='Editar — '+g.title;
+    document.getElementById('m-score').value  = d.score||'';
+    document.getElementById('m-level').value  = d.level==='—'?'':d.level;
+    document.getElementById('m-status').value = d.status;
+    pickedStars=d.stars; updateStars();
+    document.getElementById('modal-overlay').classList.add('open');
+  }
+  function closeModal() { document.getElementById('modal-overlay').classList.remove('open'); editingId=null; }
+  async function saveModal() {
+    if (!editingId||!currentUser) return;
+    const newData={ score:parseInt(document.getElementById('m-score').value)||0, level:document.getElementById('m-level').value.trim()||'—', stars:pickedStars, status:document.getElementById('m-status').value };
+    const btn=document.getElementById('btn-save-modal');
+    btn.disabled=true; btn.textContent='Salvando…';
+    const ok=await saveScore(currentUser.id,editingId,newData);
+    btn.disabled=false; btn.textContent='Salvar';
+    if(!ok) return;
+    scores[editingId]=newData; closeModal(); renderDashboard();
+    showToast('Recorde salvo!',true);
+  }
+
+  function updateStars() { document.querySelectorAll('#star-picker i').forEach(el=>el.classList.toggle('lit',parseInt(el.dataset.v)<=pickedStars)); }
+  document.getElementById('star-picker').addEventListener('click',e=>{ const el=e.target.closest('i'); if(!el) return; pickedStars=parseInt(el.dataset.v); updateStars(); });
+  document.getElementById('modal-overlay').addEventListener('click',e=>{ if(e.target===document.getElementById('modal-overlay')) closeModal(); });
+  document.getElementById('game-modal-overlay').addEventListener('click',e=>{ if(e.target===document.getElementById('game-modal-overlay')) closeGameModal(); });
+
+  // ── PIN inputs ────────────────────────────────
+  document.addEventListener('DOMContentLoaded',()=>{
+    const boxes=document.querySelectorAll('#pin-inputs input');
+    boxes.forEach((box,i)=>{
+      box.addEventListener('input',()=>{ box.value=box.value.replace(/\D/g,'').slice(-1); if(box.value){box.classList.add('filled');if(i<boxes.length-1)boxes[i+1].focus();}else box.classList.remove('filled'); });
+      box.addEventListener('keydown',e=>{ if(e.key==='Backspace'&&!box.value&&i>0)boxes[i-1].focus(); if(e.key==='Enter')verifyPin(); });
+      box.addEventListener('paste',e=>{ const p=(e.clipboardData||window.clipboardData).getData('text').replace(/\D/g,''); if(p.length>=6){[...boxes].forEach((b,j)=>{b.value=p[j]||'';b.classList.toggle('filled',!!p[j]);});boxes[Math.min(p.length,boxes.length)-1].focus();e.preventDefault();}});
+    });
+  });
+  function focusFirst(){ document.querySelector('#pin-inputs input').focus(); }
+  function clearPins() { document.querySelectorAll('#pin-inputs input').forEach(b=>{b.value='';b.classList.remove('filled');}); }
+  function startCd() {
+    clearInterval(cdTimer); let sec=60;
+    const btn=document.getElementById('btn-resend'),cd=document.getElementById('countdown');
+    btn.disabled=true; cd.textContent=sec;
+    cdTimer=setInterval(()=>{ sec--;cd.textContent=sec;if(sec<=0){clearInterval(cdTimer);btn.disabled=false;btn.innerHTML='Reenviar PIN';}},1000);
+  }
+
+  function togglePw(inputId,iconId) {
+    const input=document.getElementById(inputId),icon=document.getElementById(iconId);
+    input.type=input.type==='password'?'text':'password';
+    icon.className=input.type==='password'?'ti ti-eye':'ti ti-eye-off';
+  }
+
+  function showToast(msg,success=false) {
+    const t=document.getElementById('toast');
+    t.textContent=msg; t.className='show'+(success?' green':'');
+    setTimeout(()=>t.className='',3500);
   }
 </script>
 </body>
